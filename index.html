@@ -47,6 +47,29 @@
       opacity: .55;
       pointer-events: none;
     }
+    .site-nav {
+      position: fixed;
+      top: 1.4rem;
+      left: 50%;
+      z-index: 2;
+      display: flex;
+      gap: .35rem;
+      padding: .4rem;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 999px;
+      background: rgba(15,19,39,.58);
+      backdrop-filter: blur(14px);
+      transform: translateX(-50%);
+    }
+    .site-nav a {
+      padding: .65rem 1rem;
+      border-radius: 999px;
+      color: #c5c8df;
+      font-size: .84rem;
+      text-decoration: none;
+      transition: color .2s, background .2s;
+    }
+    .site-nav a:hover, .site-nav a[aria-current="page"] { color: white; background: rgba(255,255,255,.12); }
     main {
       position: relative;
       width: min(680px, calc(100% - 36px));
@@ -116,6 +139,11 @@
 </head>
 <body>
   <div class="stars" aria-hidden="true"></div>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
   <main>
     <div class="eyebrow">A little beginning</div>
     <h1>Hello,<span>World!</span></h1>
